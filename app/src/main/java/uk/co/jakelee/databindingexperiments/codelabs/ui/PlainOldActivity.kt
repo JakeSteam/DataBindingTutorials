@@ -30,19 +30,9 @@ class PlainOldActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val binding : CodelabsPlainActivityBinding = DataBindingUtil.setContentView(this, R.layout.codelabs_plain_activity)
-        binding.name = "Jake"
-        binding.lastName = "Lee"
+        binding.viewmodel = viewModel
 
         // TODO: Explicitly setting initial values is a bad pattern. We'll fix that.
-        updateLikes()
-    }
-
-    /**
-     * This method is triggered by the `android:onclick` attribute in the layout. It puts business
-     * logic in the activity, which is not ideal. We should do something about that.
-     */
-    fun onLike(view: View) {
-        viewModel.onLike()
         updateLikes()
     }
 
