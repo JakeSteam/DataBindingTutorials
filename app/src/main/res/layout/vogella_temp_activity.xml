@@ -2,6 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable name="temp" type="uk.co.jakelee.databindingexperiments.vogella.TemperatureData"/>
+        <variable
+                name="presenter"
+                type="uk.co.jakelee.databindingexperiments.vogella.TemperatureActivityPresenter"/>
     </data>
     <LinearLayout
             android:orientation="vertical"
@@ -10,10 +13,11 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{temp.location}"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@{temp.celsius}"/>
+        <Button
+                android:text="Start second activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> presenter.showList()}"/>
     </LinearLayout>
 </layout>
