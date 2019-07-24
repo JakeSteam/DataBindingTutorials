@@ -13,14 +13,15 @@
             android:theme="@style/AppTheme">
         <activity android:name=".codelabs.ui.PlainOldActivity" />
         <activity android:name=".mindorks.MindorksActivity" />
-        <activity android:name=".vogella.TemperatureActivity">
+        <activity android:name=".vogella.TemperatureActivity" />
+        <activity android:name=".vogella.SecondActivity"/>
+        <activity android:name=".androidhive.AndroidHiveActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".vogella.SecondActivity"/>
     </application>
 
 </manifest>
