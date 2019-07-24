@@ -5,12 +5,17 @@ import androidx.databinding.Bindable;
 import uk.co.jakelee.databindingexperiments.BR;
 
 public class TemperatureData extends BaseObservable {
+
     private String location;
+
     private String celsius;
 
-    public TemperatureData(String location, String celsius) {
+    private String url;
+
+    public TemperatureData(String location, String celsius, String url) {
         this.location = location;
         this.celsius = celsius;
+        this.url = url;
     }
 
     @Bindable
@@ -23,7 +28,13 @@ public class TemperatureData extends BaseObservable {
         return location;
     }
 
-    public void setLocation(String location){
+    @Bindable
+    public String getUrl() {
+        return url;
+    }
+
+
+    public void setLocation(String location) {
         this.location = location;
         notifyPropertyChanged(BR.location);
     }
@@ -33,4 +44,8 @@ public class TemperatureData extends BaseObservable {
         notifyPropertyChanged(BR.celsius);
     }
 
+    public void setUrl(String url) {
+        this.url = url;
+        notifyPropertyChanged(BR.url);
+    }
 }
