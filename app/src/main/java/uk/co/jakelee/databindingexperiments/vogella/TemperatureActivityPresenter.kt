@@ -1,6 +1,9 @@
 package uk.co.jakelee.databindingexperiments.vogella
 
 import android.content.Context
+import android.content.Intent
+
+
 
 class TemperatureActivityPresenter(private val view: TemperatureActivityContract.View, private val ctx: Context) :
     TemperatureActivityContract.Presenter {
@@ -9,4 +12,9 @@ class TemperatureActivityPresenter(private val view: TemperatureActivityContract
         view.showData(temperatureData)
     }
 
+    override fun showList() {
+        val i = Intent(ctx, SecondActivity::class.java)
+        i.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        ctx.startActivity(i)
+    }
 }
