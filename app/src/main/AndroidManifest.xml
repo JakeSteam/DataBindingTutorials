@@ -15,7 +15,8 @@
         <activity android:name=".mindorks.MindorksActivity" />
         <activity android:name=".vogella.TemperatureActivity" />
         <activity android:name=".vogella.SecondActivity"/>
-        <activity android:name=".androidhive.AndroidHiveActivity">
+        <activity android:name=".androidhive.AndroidHiveActivity"/>
+        <activity android:name=".androidwave.AndroidWaveActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
