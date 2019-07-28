@@ -14,5 +14,6 @@ class AndroidWaveActivity : AppCompatActivity() {
         val binding: AndroidwaveActivityBinding = DataBindingUtil.setContentView(this, R.layout.androidwave_activity)
 
         binding.user = User("Mr User", "101 Fake Road | England", "101K", "29")
+        binding.handler = EventHandler(this)
     }
 }

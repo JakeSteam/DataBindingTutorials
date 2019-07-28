@@ -7,6 +7,10 @@
         <variable
                 name="user"
                 type="uk.co.jakelee.databindingexperiments.androidwave.User" />
+
+        <variable
+                name="handler"
+                type="uk.co.jakelee.databindingexperiments.androidwave.EventHandler" />
     </data>
 
     <RelativeLayout
@@ -151,5 +155,17 @@
             </RelativeLayout>
 
         </LinearLayout>
+
+        <Button
+                android:id="@+id/btnFollow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linlay1"
+                android:background="@color/colorPrimary"
+                android:onClick="@{() -> handler.onButtonClick(user.name)}"
+                android:text="Follow"
+                android:padding="8dp"
+                android:textColor="@color/white" />
+
     </RelativeLayout>
 </layout>
