@@ -25,6 +25,7 @@ class AndroidHiveActivity : AppCompatActivity() {
         user = User()
         user!!.name.set("Original name")
         user!!.email.set("Original.email@email.com")
+        user!!.profileImage = "https://via.placeholder.com/350x350"
         binding.user = user
 
         handlers = MyClickHandlers(this)

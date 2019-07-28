@@ -3,6 +3,8 @@
 
     <data>
 
+        <import type="uk.co.jakelee.databindingexperiments.androidhive.BindingUtils" />
+
         <variable
                 name="user"
                 type="uk.co.jakelee.databindingexperiments.androidhive.User" />
@@ -25,12 +27,18 @@
                 android:layout_marginTop="60dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{user.name}" />
+                android:text="@{BindingUtils.capitalize(user.name)}" />
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{user.email}" />
+
+        <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:profileImage="@{user.profileImage}" />
 
         <Button
                 android:layout_width="wrap_content"
