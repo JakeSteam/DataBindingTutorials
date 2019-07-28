@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="uk.co.jakelee.databindingexperiments.androidhive.BindingUtils" />
+
+        <variable
+                name="user"
+                type="uk.co.jakelee.databindingexperiments.androidhive.User" />
+
+        <variable
+                name="handlers"
+                type="uk.co.jakelee.databindingexperiments.androidhive.AndroidHiveActivity.MyClickHandlers" />
+    </data>
+
+    <LinearLayout
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:padding="6dp"
+                  tools:context=".androidhive.AndroidHiveActivity"
+                  tools:showIn="@layout/androidhive_activity">
+
+        <TextView
+                android:layout_marginTop="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{BindingUtils.capitalize(user.name)}" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{user.email}" />
+
+        <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:profileImage="@{user.profileImage}" />
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{handlers::onButtonClick}"
+                android:text="CLICK" />
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v) -> handlers.onButtonClickWithParam(v, user)}"
+                android:text="CLICK WITH PARAM" />
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LONG PRESS"
+                android:onLongClick="@{handlers::onButtonLongPressed}" />
+
+    </LinearLayout>
+</layout>
